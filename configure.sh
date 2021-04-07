@@ -12,9 +12,9 @@
 #from git checkout lesson-16
 # git add .
 # git commit -m 'autocommit'
-for i in {17..35}
+for i in {21..35}
 do
     git checkout lesson-$i
-    git checkout lesson-16 ./gamezone/package.json ./gamezone/package-lock.json ./gamezone/app.json ./configure.sh ./README.md
+    git checkout lesson-20 ./gamezone/App.js ./gamezone/routes/homeStack.js ./gamezone/package.json ./gamezone/package-lock.json
     git commit -m 'changed configs'
 done

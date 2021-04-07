@@ -9,10 +9,12 @@ const { Navigator, Screen } = createStackNavigator();
 const HomeNavigator = () => (
   <Navigator headerMode="none">
  {/* //other options: "float", "screen" */}
-    <Screen name="Details" component={ReviewDetails} />
-    <Screen name="Home" component={Home} />
+    <Screen name="Home" component={Home} options={{ title: 'Reviews' }}/>
+    <Screen name="ReviewDetails" component={ReviewDetails} options={{ title: 'Details' }}/>
   </Navigator>
 );
+
+const Stack = createStackNavigator();
 
 export const AppNavigator = () => (
   <NavigationContainer>
