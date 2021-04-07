@@ -1,9 +1,8 @@
 {
   "expo": {
-    "name": "gamezone",
-    "slug": "gamezone",
+    "name": "my-project",
+    "slug": "my-project",
     "privacy": "public",
-    "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
       "android",
