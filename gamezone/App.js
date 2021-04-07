@@ -1,27 +1,25 @@
-import React, { useState } from 'react';
-import * as Font from 'expo-font';
-import { AppLoading } from 'expo';
-import Navigator from './routes/drawer';
+// components installation:
+// expo install expo-font @expo-google-fonts/nunito
+// npm install expo-app-loading
 
-const getFonts = () => Font.loadAsync({
-  'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
-  'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
-});
+import React from 'react';
+import AppLoading from 'expo-app-loading';
+import Home from './screens/home';
+// import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
+import { useFonts, Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito';
 
 export default function App() {
-  const [fontsLoaded, setFontsLoaded] = useState(false);
-
-  if (fontsLoaded) {
-    return (
-      <Navigator />
-    );
-  } else {
-    return (
-      <AppLoading 
-        startAsync={getFonts} 
-        onFinish={() => setFontsLoaded(true)} 
-      />
-    )
-  }
-
+    //   let [fontsLoaded] = useFonts({
+    //     Inter_900Black,
+    //   });
+    let [fontsLoaded] = useFonts({
+        Nunito_400Regular,
+        Nunito_700Bold,
+    });
+    if (!fontsLoaded) {
+        return <AppLoading />;
+    }
+    else {
+        return <Home />;
+    }
 }
