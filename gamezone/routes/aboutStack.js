@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-// import Header from '../shared/header';
+import Header from '../shared/header';
 import About from '../screens/about';
 
 
@@ -13,7 +13,11 @@ export const AboutNavigator = () => (
       headerStyle: { backgroundColor: '#eee', height: 60 }
     }
   }>
-    <Screen name="About" component={About}/>
+    <Screen name="About" component={About} options={({ navigation }) => {
+      return {
+        headerTitle: () => <Header title='About' navigation={navigation} />
+      }
+    }}/>
   </Navigator>
 );
 
