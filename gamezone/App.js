@@ -5,6 +5,7 @@
 import React from 'react';
 import AppLoading from 'expo-app-loading';
 import Home from './screens/home';
+import { AppNavigator } from "./routes/homeStack";
 // import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
 import { useFonts, Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito';
 
@@ -18,8 +19,8 @@ export default function App() {
     });
     if (!fontsLoaded) {
         return <AppLoading />;
-    }
+    }   
     else {
-        return <Home />;
+        return <AppNavigator />;
     }
 }
